@@ -82,7 +82,7 @@ npm run pack:macos
 npm run pack:linux
 ```
 
-更新文件上传示例目录：`https://files.hyrubik.com/updates/ferrassh/`  
+更新文件上传示例目录：`https://files.hyrubik.com/updates/ferrassh/`,当然不建议直接使用我私人的文件管理服务器 
 本机保险库和用户数据不会打进安装包。
 
 ## 目录
