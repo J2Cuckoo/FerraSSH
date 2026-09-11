@@ -1,0 +1,37 @@
+[package]
+name = "ferrassh-tauri"
+version.workspace = true
+description = "FerraSSH — native SSH/SFTP workstation"
+authors = ["贵州力贤网络科技有限公司"]
+edition.workspace = true
+license.workspace = true
+
+[lib]
+name = "ferrassh_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+ferra-core = { workspace = true }
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls", "http2", "stream"] }
+serde.workspace = true
+serde_json.workspace = true
+tauri = { version = "2", features = [] }
+tauri-plugin-dialog = "2"
+tauri-plugin-opener = "2"
+tauri-plugin-process = "2"
+sha2 = "0.10"
+tokio.workspace = true
+tracing.workspace = true
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+uuid.workspace = true
+arboard = "3"
+
+[target.'cfg(windows)'.dependencies]
+winreg = "0.52"
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]

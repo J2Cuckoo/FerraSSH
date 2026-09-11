@@ -1,0 +1,47 @@
+[package]
+name = "ferra-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "SSH/SFTP engine, terminal emulator, encrypted vault, and directory sync for FerraSSH"
+
+[dependencies]
+aes-gcm = "0.10"
+alacritty_terminal = "0.25"
+anyhow = "1"
+argon2 = "0.5"
+base64 = "0.22"
+cbc = { version = "0.1", features = ["std"] }
+chrono = { version = "0.4", features = ["serde", "clock"] }
+cipher = { version = "0.4", features = ["alloc", "block-padding"] }
+dashmap = "6"
+directories = "6"
+encoding_rs = "0.8"
+futures = { version = "0.3", default-features = false, features = ["std", "async-await"] }
+hex = "0.4"
+hmac = "0.12"
+parking_lot = "0.12"
+pbkdf2 = { version = "0.12", default-features = false, features = ["hmac"] }
+rand = "0.8"
+rusqlite = { version = "0.32", features = ["bundled", "serialize", "backup"] }
+sm3 = "0.4"
+sm4 = "0.5"
+russh = { version = "0.54.1", default-features = false, features = ["flate2", "ring", "rsa", "des"] }
+russh-sftp = "2.0.8"
+serde.workspace = true
+serde_json.workspace = true
+sha2 = "0.10"
+thiserror.workspace = true
+tokio.workspace = true
+tracing.workspace = true
+uuid.workspace = true
+walkdir = "2"
+zeroize.workspace = true
+
+[features]
+default = []
+
+[dev-dependencies]
+tempfile = "3"
+tokio = { workspace = true, features = ["macros", "rt-multi-thread"] }

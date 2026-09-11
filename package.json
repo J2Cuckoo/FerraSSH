@@ -1,0 +1,35 @@
+{
+  "name": "ferrassh",
+  "private": true,
+  "version": "0.2.11",
+  "author": "贵州力贤网络科技有限公司",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:native": "cargo run -p ferrassh",
+    "build": "tsc && vite build && node scripts/assert-clean-web.mjs",
+    "preview": "vite preview",
+    "tauri": "tauri",
+    "icons": "node scripts/gen-icon.mjs",
+    "pack": "node scripts/pack.mjs",
+    "pack:windows": "node scripts/pack.mjs windows",
+    "pack:macos": "node scripts/pack.mjs macos",
+    "pack:linux": "node scripts/pack.mjs linux"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.8.0",
+    "@tauri-apps/plugin-dialog": "^2.4.0",
+    "@tauri-apps/plugin-opener": "^2.5.0",
+    "@tauri-apps/plugin-process": "^2.3.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.8.0",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.7"
+  }
+}

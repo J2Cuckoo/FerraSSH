@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FerraSSH</title>
+    <style>
+      html, body, #root {
+        height: 100%;
+        margin: 0;
+        background: #0b0f14;
+        color: #d6deeb;
+        font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+        overflow: hidden;
+        color-scheme: dark;
+      }
+      .boot-shell {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        background: #0b0f14;
+      }
+      .boot-bar {
+        height: 36px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        padding: 0 12px;
+        background: #0e141c;
+        border-bottom: 1px solid #243044;
+        font-weight: 650;
+      }
+      .boot-gate {
+        flex: 1;
+        display: grid;
+        place-items: center;
+        background: radial-gradient(1200px 600px at 20% 0%, #16323a, #0b0f14);
+      }
+      .boot-card {
+        width: 420px;
+        box-sizing: border-box;
+        background: #121821;
+        border: 1px solid #243044;
+        border-radius: 14px;
+        padding: 28px;
+      }
+      .boot-brand { display: flex; gap: 12px; align-items: center; margin-bottom: 18px; }
+      .boot-logo {
+        width: 42px; height: 42px; border-radius: 10px;
+        display: grid; place-items: center;
+        background: #3dcdc3; color: #06201e; font-weight: 800;
+      }
+      .boot-card h1 { margin: 0; font-size: 22px; }
+      .boot-card p { margin: 6px 0 0; color: #8aa0b4; font-size: 13px; }
+      .boot-label { display: block; font-size: 13px; color: #8aa0b4; margin-bottom: 6px; }
+      .boot-field {
+        height: 38px; border-radius: 6px;
+        background: #0b0f14; border: 1px solid #243044;
+      }
+      .boot-btn {
+        margin-top: 14px; height: 40px; width: 100%;
+        border: none; border-radius: 6px;
+        background: #3dcdc3; color: #06201e; font-weight: 650;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class="boot-shell">
+        <div class="boot-bar">FerraSSH</div>
+        <div class="boot-gate">
+          <div class="boot-card">
+            <div class="boot-brand">
+              <span class="boot-logo">Fs</span>
+              <div>
+                <h1>FerraSSH</h1>
+                <p>主密码保护的 SSH / SFTP 工作站</p>
+              </div>
+            </div>
+            <span class="boot-label">主密码</span>
+            <div class="boot-field"></div>
+            <button class="boot-btn" type="button" disabled>解锁</button>
+            <p>连接从容，如在本地。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

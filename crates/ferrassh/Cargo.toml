@@ -1,0 +1,25 @@
+[package]
+name = "ferrassh"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "FerraSSH native desktop — static Rust binary, no WebView"
+
+[[bin]]
+name = "ferrassh"
+path = "src/main.rs"
+
+[dependencies]
+eframe = { version = "0.31", default-features = false, features = ["default_fonts", "glow", "accesskit"] }
+egui = "0.31"
+ferra-core = { workspace = true }
+parking_lot = "0.12"
+tokio.workspace = true
+tracing.workspace = true
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+uuid.workspace = true
+zeroize.workspace = true
+
+[build-dependencies]
+winresource = "0.1"

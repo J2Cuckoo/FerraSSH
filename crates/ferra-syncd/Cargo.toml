@@ -1,0 +1,21 @@
+[package]
+name = "ferra-syncd"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Zero-knowledge blob store for FerraSSH vault sync"
+
+[[bin]]
+name = "ferra-syncd"
+path = "src/main.rs"
+
+[dependencies]
+axum = { version = "0.8", features = ["json"] }
+serde = { workspace = true }
+serde_json.workspace = true
+sha2 = "0.10"
+tokio.workspace = true
+tower-http = { version = "0.6", features = ["cors", "trace"] }
+tracing.workspace = true
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+hex = "0.4"

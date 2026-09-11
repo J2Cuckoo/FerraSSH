@@ -1,0 +1,31 @@
+[workspace]
+resolver = "2"
+members = ["crates/ferra-core", "crates/ferra-syncd", "crates/ferrassh", "src-tauri"]
+default-members = ["crates/ferra-core", "crates/ferrassh"]
+
+[workspace.package]
+version = "0.2.11"
+edition = "2021"
+authors = ["贵州力贤网络科技有限公司"]
+license = "MIT"
+homepage = "https://hyrubik.com/#/products/ferrassh"
+repository = "https://github.com/ferra-ssh/ferrassh"
+rust-version = "1.85"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+panic = "abort"
+strip = true
+debug = false
+
+[workspace.dependencies]
+ferra-core = { path = "crates/ferra-core" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+tokio = { version = "1", features = ["full"] }
+uuid = { version = "1", features = ["v4", "serde"] }
+tracing = "0.1"
+zeroize = { version = "1", features = ["zeroize_derive"] }

@@ -1,0 +1,69 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "FerraSSH",
+  "mainBinaryName": "FerraSSH",
+  "version": "0.2.11",
+  "identifier": "com.ferra.ssh",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../web-dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "FerraSSH",
+        "width": 1440,
+        "height": 900,
+        "minWidth": 960,
+        "minHeight": 640,
+        "decorations": false,
+        "shadow": true,
+        "backgroundColor": "#0b0f14",
+        "dragDropEnabled": true
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["msi", "nsis", "dmg", "app", "deb", "rpm", "appimage"],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/icon.ico",
+      "icons/icon.icns"
+    ],
+    "windows": {
+      "webviewInstallMode": {
+        "type": "embedBootstrapper",
+        "silent": true
+      },
+      "wix": { "language": "zh-CN" },
+      "nsis": {
+        "languages": ["SimpChinese"],
+        "displayLanguageSelector": false,
+        "installerIcon": "icons/icon.ico",
+        "installMode": "perMachine",
+        "installerHooks": "windows/hooks.nsh"
+      }
+    },
+    "macOS": {
+      "minimumSystemVersion": "11.0"
+    },
+    "linux": {
+      "deb": { "depends": ["libwebkit2gtk-4.1-0"] },
+      "appimage": { "bundleMediaFramework": false }
+    },
+    "publisher": "贵州力贤网络科技有限公司",
+    "copyright": "Copyright © 2026 贵州力贤网络科技有限公司",
+    "homepage": "https://hyrubik.com/#/products/ferrassh",
+    "category": "DeveloperTool",
+    "shortDescription": "Native SSH/SFTP workstation",
+    "longDescription": "FerraSSH is a cross-platform SSH and SFTP client. The local vault uses SM3/SM4 (GM/T) to encrypt the entire SQLite database at rest."
+  },
+  "plugins": {}
+}
